@@ -10,13 +10,16 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN useradd --system --uid 666 -M --shell /usr/sbin/nologin web
-
-USER web
+# Fix apache logs
+#RUN ln -sf /proc/self/fd/1 /var/log/apache2/access.log &&
+#    ln -sf /proc/self/fd/1 /var/log/apache2/error.log
 
 EXPOSE 80
 
-VOLUME /data
-WORKDIR /data
+VOLUME /www
+WORKDIR /www
 
+COPY main.sh /
+
+ENTRYPOINT ["/main.sh"]
 
