@@ -1,11 +1,22 @@
 #!/bin/bash
 
-SITE=$1
-ADMIN_EMAIL=$2
+
+if [ -z "$SITE" ]
+then
+    echo 'Prease inform an SITE variable, using default'
+    SITE=localhost
+fi
+
+if [ -z "$ADMIN_EMAIL" ]
+then
+    echo 'Please inform an admin email, using default'
+    ADMIN_EMAIL='root@localhost'
+fi
+
 if [ ! -f /etc/apache2/sites-available/default ]
 then
     echo '[+] Generating site configuration'
-    cat << EOF
+    cat > /etc/apache2/sites-available/default << EOF
 <VirtualHost *:80>
     ServerName ${SITE}
     ServerAdmin ${ADMIN_EMAIL}
