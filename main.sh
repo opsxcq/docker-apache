@@ -16,7 +16,7 @@ fi
 if [ ! -f /etc/apache2/sites-available/default ]
 then
     echo '[+] Generating site configuration'
-    cat > /etc/apache2/sites-available/default << EOF
+    cat > /etc/apache2/sites-enabled/default << EOF
 <VirtualHost *:80>
     ServerName ${SITE}
     ServerAdmin ${ADMIN_EMAIL}
