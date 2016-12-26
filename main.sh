@@ -13,10 +13,10 @@ then
     ADMIN_EMAIL='root@localhost'
 fi
 
-if [ ! -f /etc/apache2/sites-available/default ]
+if [ ! -f /etc/apache2/sites-enabled/default.conf ]
 then
     echo '[+] Generating site configuration'
-    cat > /etc/apache2/sites-enabled/default << EOF
+    cat > /etc/apache2/sites-enabled/default.conf << EOF
 <VirtualHost *:80>
     ServerName ${SITE}
     ServerAdmin ${ADMIN_EMAIL}
