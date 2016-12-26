@@ -25,8 +25,7 @@ then
     <Directory /www>
         Options -Indexes
         AllowOverride all
-        Order allow,deny
-        allow from all
+        Require all granted
     </Directory>
 
     # Possible values include: debug, info, notice, warn, error, crit,
