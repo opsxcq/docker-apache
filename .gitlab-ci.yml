@@ -9,6 +9,8 @@ stages:
 docker-build:
   stage: package
   script:
+    - echo Debug me
+    - sleep 3600
     - docker build -t $REGISTRY_HOST/strm/apache .
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $REGISTRY_HOST
     - docker push $REGISTRY_HOST/strm/apache
