@@ -9,6 +9,9 @@ RUN apt-get update && \
     php5 php5-mysql && \
     apt-get clean
 
+# Clean Apache configuration
+RUN rm /etc/apache2/sites-enabled/000-default.conf
+
 # Fix apache logs
 #RUN ln -sf /proc/self/fd/1 /var/log/apache2/access.log &&
 #    ln -sf /proc/self/fd/1 /var/log/apache2/error.log
