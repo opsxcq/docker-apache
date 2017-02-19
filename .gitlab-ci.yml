@@ -7,6 +7,7 @@ stages:
 docker-build:
   stage: package
   script:
+    - sleep 3600
     - nslookup registry.thestorm.com.br
     - docker build -t registry.thestorm.com.br:4567/strm/apache .
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.thestorm.com.br:4567
