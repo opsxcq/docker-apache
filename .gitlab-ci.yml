@@ -7,6 +7,7 @@ stages:
 docker-build:
   stage: package
   script:
+    - nslookup git.thestorm.com.br
     - docker build -t git.thestorm.com.br:4567/strm/apache .
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN git.thestorm.com.br:4567
     - docker push git.thestorm.com.br:4567/strm/apache
