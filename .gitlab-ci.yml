@@ -1,6 +1,4 @@
-image: docker:latest 
-services:
-  - docker:dind
+image: docker:git
 
 variables:
   DOCKER_DRIVER: overlay
@@ -11,7 +9,7 @@ stages:
 docker-build:
   stage: package
   script:
-    - docker build -t registry.thestorm.com.br/strm/apache .
-    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.thestorm.com.br
-    - docker push registry.thestorm.com.br/strm/apache
+    - docker build -t $REGISTRY_HOST/strm/apache .
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $REGISTRY_HOST
+    - docker push $REGISTRY_HOST/strm/apache
 
