@@ -1,5 +1,4 @@
 image: docker:git
-
 variables:
   DOCKER_DRIVER: overlay
 
