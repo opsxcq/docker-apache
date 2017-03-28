@@ -1,6 +1,5 @@
 # Vanilla Apache Httpd
-[![Docker Pulls](https://img.shields.io/docker/pulls/strm/apache.svg?style=plastic)](https://hub.docker.com/r/strm/apache/)
-![License](https://img.shields.io/badge/License-GPL-blue.svg?style=plastic)
+[![Docker Pulls](https://img.shields.io/docker/pulls/strm/apache.svg?style=plastic)](https://hub.docker.com/r/strm/apache/) ![License](https://img.shields.io/badge/License-GPL-blue.svg?style=plastic)
 
 A vanilla Apache Httpd server running on Debian Jessie with PHP5 and PHP Mysql drivers.
 
